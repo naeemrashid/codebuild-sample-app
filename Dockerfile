@@ -1,6 +1,6 @@
-From golang:alpine
+FROM golang:alpine
 WORKDIR /src/
 COPY main.go .
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w"  -o  /bin/main ./main.go
 EXPOSE 80
-CMD["./bin/main"]
+CMD ["/bin/main"]
